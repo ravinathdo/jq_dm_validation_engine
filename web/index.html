@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+
+        <link rel="stylesheet" href="css/validationEngine.jquery.css"/>
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validationEngine-en.js"></script>
+        <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+
+
+        <script type="text/javascript" >
+
+            $(document).ready(function() {
+                alert('jquery detected');
+            });
+        </script>
+
+       
+<script>
+$(document).ready(function(){
+    $("#formID").validationEngine();
+   });
+</script>
+
+
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+<br>
+<br>
+<br>
+        <form id="formID">
+           
+
+            <label>
+                <span>Field is required : </span>
+                <input value="" class="validate[required] text-input" type="text" name="req" id="req" />
+            </label>
+
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://www.position-relative.net/creation/formValidator/demos/demoValidators.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>JQuery Validation Engine</title>
+        <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
+
+	<script src="js/jquery-1.7.2.min.js" type="text/javascript">
+	</script>
+	<script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8">
+	</script>
+	<script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8">
+	</script>
+	<script>
+		jQuery(document).ready(function(){
+			// binds form submission and fields to the validation engine
+			jQuery("#formID").validationEngine();
+		});
+
+		/**
+		*
+		* @param {jqObject} the field where the validation applies
+		* @param {Array[String]} validation rules for this field
+		* @param {int} rule index
+		* @param {Map} form options
+		* @return an error string if validation failed
+		*/
+		function checkHELLO(field, rules, i, options){
+			if (field.val() != "HELLO") {
+				// this allows to use i18 for the error msgs
+				return options.allrules.validate2fields.alertText;
+			}
+		}
+	</script>
+<style type="text/css">::selection { background: #undefined; }</style><style>.lookupKJMBTR, .lookupforemostKJMBTR, .lookupdockedKJMBTR, .rowiframeKJMBTR, .celliframeKJMBTR, .iframeKJMBTR, .emptyKJMBTR, .barKJMBTR, .barforemostKJMBTR, .bardockedKJMBTR, .cellKJMBTR, .leftKJMBTR, .rightKJMBTR, .buttoncontainerKJMBTR, .buttonKJMBTR, .buttonimageKJMBTR, .waitingKJMBTR, .handleKJMBTR, .queryKJMBTR, .hintKJMBTR, .templateKJMBTR, .firstlevelgroupKJMBTR, .notfirstlevelgroupKJMBTR{
+	    background: none !important;
+	    border: 0px !important;
+	    border-style: none !important;
+	     color: black !important;
+	     direction: ltr !important;
+	     float: none !important;
+	     font-family: sans-serif !important;
+	     font-size: small !important;
+	     font-style: normal !important;
+	     font-variant: normal !important;
+	     font-weight: normal !important;
+	     letter-spacing: normal !important;
+	     line-height: normal !important;
+	     margin: 0px !important;
+	    padding: 0px !important;
+	    text-align: left !important;
+	     text-decoration: none !important;
+	     text-indent: 0px !important;
+	     text-transform: none !important;
+	     vertical-align: baseline !important;
+	    white-space: normal !important;
+}
+
+div.lookupKJMBTR{
+	     display: table !important;
+	     -webkit-transition: -webkit-box-shadow 0.25s linear, border-color 0.25s linear !important;
+}
+
+div.lookupforemostKJMBTR{
+}
+
+div.lookupdockedKJMBTR{
+}
+
+div.rowiframeKJMBTR{
+	     display: table-row !important;
+}
+
+div.rowiframeKJMBTR td.celliframeKJMBTR{
+	      display: table-cell !important;
+	      width: 100% !important;
+	      height: 100% !important;
+}
+
+td.celliframeKJMBTR iframe.iframeKJMBTR{
+	       display: inline !important;
+	       width: 100% !important;
+	       height: 100% !important;
+	       background-color: white !important;
+}
+
+iframe.emptyKJMBTR{
+	       background-image: url('chrome-extension://hljnlfolmbmibdjaikiaepgepgnldclj/img/128.png') !important;
+	       background-position: 50% 50% !important;
+	       background-repeat: no-repeat !important;
+}
+
+div.barKJMBTR{
+	     display: table-row !important;
+	     -webkit-transition: background 0.25s linear !important;
+	     width: 100% !important;
+	     cursor: move !important;
+	     background: lightgrey !important;
+}
+
+div.barforemostKJMBTR{
+	background: #84b7ea !important;
+}
+
+div.bardockedKJMBTR{
+	background: #336699 !important;
+}
+
+div.barKJMBTR div.cellKJMBTR{
+	     display: table-cell !important;
+	     vertical-align: middle !important;
+}
+
+div.leftKJMBTR{
+	     padding-right: 16px !important;
+	     text-align: left !important;
+}
+
+div.rightKJMBTR{
+	     white-space: nowrap !important;
+	     text-align: right !important;
+}
+
+span.buttoncontainerKJMBTR{
+	     display:inline !important;
+}
+
+a.buttonKJMBTR:link{
+	     display:inline !important;
+	     -webkit-user-select: none !important;
+	     color: transparent !important;
+}
+
+a.buttonKJMBTR img.buttonimageKJMBTR{
+	     display:inline !important;
+	     vertical-align: middle !important;
+}
+
+img.waitingKJMBTR{
+	     display:inline !important;
+	     cursor: pointer !important;
+	     -webkit-user-select: none !important;
+	     vertical-align: middle !important;
+	     padding-left: 6px !important;
+	 padding-right: 6px !important;
+}
+
+div.handleKJMBTR{
+	     display:block !important;
+	     cursor: se-resize !important;
+	     left: 100% !important;
+	     top: 100% !important;
+	     margin-left: -4px !important;
+	     margin-top: -4px !important;
+	     position: absolute !important;
+	     width: 8px !important;
+	 height: 8px !important;
+}
+
+input.queryKJMBTR{
+	     display:inline-block !important;
+	     background: white !important;
+	     vertical-align: top !important;
+	     border: 1px solid darkgrey !important;
+	      font-size: 13px !important;
+	      padding-top: 1px !important;
+	 padding-bottom: 1px !important;
+	     width: 12em !important;
+}
+
+.hintKJMBTR{
+	      color: lightgrey !important;
+	      font-style:italic !important;
+}
+
+select.templateKJMBTR{
+	     display:inline-block !important;
+	     background: white !important;
+	     font-size: 13px !important;
+	      border: 1px solid darkgrey !important;
+	      vertical-align: top !important;
+	     white-space: pre !important;
+	     width: 9em !important;
+	     margin-right: 2px !important;
+}
+
+optgroup.firstlevelgroupKJMBTR{
+	      color: blue !important;
+}
+
+.notfirstlevelgroupKJMBTR{
+	      color: black !important;
+}
+
+</style><style>.tipYXGRDE, .arrowYXGRDE, .arrowupYXGRDE, .arrowdownYXGRDE, .mainYXGRDE, .closeYXGRDE, .barYXGRDE, .rowYXGRDE, .cellYXGRDE, .leftYXGRDE, .rightYXGRDE, .displaytitleYXGRDE, .refreshYXGRDE, .pagingYXGRDE, .brandYXGRDE, .textYXGRDE, .leftlabelYXGRDE, .selectYXGRDE, .checkboxYXGRDE, .waitingYXGRDE, .buttoncontainerYXGRDE, .buttonYXGRDE, .buttonimageYXGRDE, .flagYXGRDE, .noticebarscontainerYXGRDE, .noticebarYXGRDE, .iframecontentYXGRDE{
+	    background: none !important;
+	    border: 0px !important;
+	    border-style: none !important;
+	     color: black !important;
+	     direction: ltr !important;
+	     float: none !important;
+	     font-family: sans-serif !important;
+	     font-size: small !important;
+	     font-style: normal !important;
+	     font-variant: normal !important;
+	     font-weight: normal !important;
+	     letter-spacing: normal !important;
+	     line-height: normal !important;
+	     margin: 0px !important;
+	    padding: 0px !important;
+	    text-align: left !important;
+	     text-decoration: none !important;
+	     text-indent: 0px !important;
+	     text-transform: none !important;
+	     vertical-align: baseline !important;
+	    white-space: normal !important;
+}
+
+div.tipYXGRDE{
+	     position: absolute !important;
+	     display:block !important;
+}
+
+div.arrowYXGRDE{
+	display:block !important;
+}
+
+canvas.arrowupYXGRDE{
+	      display: inline !important;
+	      vertical-align: bottom !important;
+}
+
+canvas.downupYXGRDE{
+	      display: inline !important;
+	      vertical-align: top !important;
+}
+
+div.mainYXGRDE{
+	display: block !important;
+}
+
+img.closeYXGRDE{
+	      display: block !important;
+	      -webkit-transition: opacity 0.5s linear !important;
+	      float: right !important;
+	      margin-right: -5px !important;
+	      margin-top: -5px !important;
+}
+
+div.barYXGRDE{
+	     display: table !important;
+	      margin-bottom: 4px !important;
+	     -webkit-user-select: none !important;
+	     width: 100% !important;
+}
+
+div.rowYXGRDE{
+	display: table-row !important;
+}
+
+div.cellYXGRDE{
+	      display: table-cell !important;
+	      vertical-align: middle !important;
+}
+
+.leftYXGRDE{
+	      padding-right: 16px !important;
+	      text-align: left !important;
+}
+
+.rightYXGRDE{
+	text-align: right !important;
+}
+
+span.refreshYXGRDE{
+	display: inline !important;
+}
+
+span.pagingYXGRDE{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+span.buttoncontainerYXGRDE{
+	display: inline !important;
+}
+
+span.displaytitleYXGRDE{
+	      display: inline !important;
+	      padding-left: 6px !important;
+	      font-size: small !important;
+	      font-weight: bold !important;
+}
+
+span.displaytitleYXGRDE a:link{
+	       display: inline !important;
+	       color: #0645AD !important;
+	       text-decoration: none !important;
+}
+
+span.displaytitleYXGRDE img{
+	display: inline !important;
+}
+
+span.brandYXGRDE{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+.brandYXGRDE a{
+	       display: inline !important;
+	       font-size: x-small !important;
+}
+
+.brandYXGRDE a:link{
+	       display: inline !important;
+	       color: #0645AD !important;
+	       text-decoration: none !important;
+}
+
+.brandYXGRDE a:visited{
+	       display: inline !important;
+	       color: #0B0080 !important;
+	       text-decoration: none !important;
+}
+
+span.textYXGRDE{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+label.leftlabelYXGRDE{
+	      display: inline !important;
+	      font-size: x-small !important;
+	      margin-right: 3px !important;
+}
+
+select.selectYXGRDE{
+	       display: inline-block !important;
+	       border: 1px solid darkgrey !important;
+	       white-space: pre !important;
+	       font-size: x-small !important;
+}
+
+input.checkboxYXGRDE{
+	      display: inline-block !important;
+	      vertical-align: text-top !important;
+	      font-size: x-small !important;
+	      margin-right: 0.3em !important;
+}
+
+img.waitingYXGRDE{
+	      display: inline !important;
+	      -webkit-user-select: none !important;
+	      vertical-align: middle !important;
+	      padding-left: 3px !important;
+}
+
+a.buttonYXGRDE, a.buttonYXGRDE:link{
+	      display: inline !important;
+	      -webkit-user-select: none !important;
+	      color: transparent !important;
+	      margin-right: 2px !important;
+}
+
+img.buttonimageYXGRDE{
+	      display: inline !important;
+	      vertical-align: middle !important;
+}
+
+img.flagYXGRDE{
+	      display: inline !important;
+	      vertical-align: middle !important;
+	      padding-bottom:2px !important;
+}
+
+img.buttonselectedYXGRDE{
+	      display: inline !important;
+	      background: #dd8 !important;
+	      border: 1px solid #bb6 !important;
+	      margin: -1px !important;
+	      border-radius: 2px !important;
+}
+
+div.noticebarscontainerYXGRDE{
+	     display: block !important;
+	     text-align: left !important;
+	     margin-bottom: 4px !important;
+	     overflow-y: auto !important;
+}
+
+div.noticebarYXGRDE{
+	     display: block !important;
+	     background: white !important;
+	     font-size: x-small !important;
+	     border-left: 3px solid lightGrey !important;
+	     margin-bottom: 1px !important;
+	     padding-left: 2px !important;
+}
+
+div.noticebarYXGRDE img{
+	      display: inline !important;
+	      margin-right: 1px !important;
+	      vertical-align: text-top !important;
+}
+
+div.noticebarYXGRDE a{
+	      display: inline !important;
+	      font-family: sans-serif !important;
+	       font-style: normal !important;
+	       font-variant: normal !important;
+	       font-weight: normal !important;
+	       font-size: x-small !important;
+}
+
+div.noticebarYXGRDE a:link{
+	      display: inline !important;
+	      color: #0645AD !important;
+	      text-decoration: none !important;
+}
+
+div.noticebarYXGRDE a:visited{
+	      display: inline !important;
+	      color: #0B0080 !important;
+	      text-decoration: none !important;
+}
+
+iframe.iframecontentYXGRDE{
+	     display: inline !important;
+	     width: 100% !important;
+}
+
+</style><style type="text/css">span[data-cmchighlight=''] {padding:0px!important;margin:0px!important;display:inline!important;float:none!important;position:static!important;-webkit-print-color-adjust:exact!important}</style><style type="text/css">.cmcredaction {color:#D3D3D3!important;background:#D3D3D3!important;-webkit-user-select:none!important;-khtml-user-select:none !important;-moz-user-select:none!important;-ms-user-select:none!important;-o-user-select:none!important;user-select:none!important;-webkit-print-color-adjust:exact!important}</style><style id="simplehl_hlstyle_VYQUXK">.simplehl1_WHNAHK { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,0,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl2_WHNAHK { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,165,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl3_WHNAHK { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,255,96,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl4_WHNAHK { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(96,255,96,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl5_WHNAHK { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(96,255,255,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl6_WHNAHK { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,96,255,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl7_WHNAHK { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #ffffff!important; background-color: rgba(0,0,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } </style><style id="simplehl_flashstyle_BVQKHR">@-webkit-keyframes flash {         0% {             opacity: 1;         }         100% {             opacity: 0;         }}</style></head>
+<body cz-shortcut-listen="true" style="zoom: 1;">
+	<p>
+		<a href="http://www.position-relative.net/creation/formValidator/demos/demoValidators.html#" onclick="alert(&#39;is the form valid? &#39;+jQuery(&#39;#formID&#39;).validationEngine(&#39;validate&#39;))">Evaluate form</a>
+		| <a href="http://www.position-relative.net/creation/formValidator/demos/demoValidators.html#" onclick="jQuery(&#39;#sport&#39;).validationEngine(&#39;validate&#39;)">Validate sport1 select field</a>
+		| <a href="http://www.position-relative.net/creation/formValidator/demos/demoValidators.html#" onclick="jQuery(&#39;#sport&#39;).validationEngine(&#39;hide&#39;)">Close favorite sport 1 prompt</a>
+		| <a href="http://www.position-relative.net/creation/formValidator/demos/demoValidators.html#" onclick="jQuery(&#39;#formID&#39;).validationEngine(&#39;hide&#39;)">Close all prompts on form</a>
+		| <a href="http://www.position-relative.net/creation/formValidator/demos/demoValidators.html#" onclick="jQuery(&#39;#formID&#39;).validationEngine(&#39;updatePromptsPosition&#39;)">Update all prompts positions</a>
+		| <a href="http://www.position-relative.net/creation/formValidator/demos/demoValidators.html#" onclick="jQuery(&#39;#test&#39;).validationEngine(&#39;showPrompt&#39;, &#39;This is an example&#39;, &#39;pass&#39;)">Build a prompt on a div</a>
+		| <a href="http://www.position-relative.net/creation/formValidator/demos/demoValidators.html#" onclick="jQuery(&#39;#test&#39;).validationEngine(&#39;hide&#39;)">Close div prompt</a>
+		| <a href="http://www.position-relative.net/creation/formValidator/index.html">Back to index</a>
+	</p>
+	<p>
+		This demonstration shows the different validators available
+		<br>
+	</p>
+	<div id="test" class="test" style="width:150px;">This is a div element</div>
+	<form id="formID" class="formular" method="post">
+		<fieldset>
+			<legend>
+				Required!
+			</legend>
+			<label>
+				<span>Field is required : </span>
+				<div class="reqformError parentFormformID formError" style="opacity: 0.87; position: absolute; top: 186px; left: 762.5px; margin-top: -33px;"><div class="formErrorContent">* This field is required<br></div><div class="formErrorArrow"><div class="line10"><!-- --></div><div class="line9"><!-- --></div><div class="line8"><!-- --></div><div class="line7"><!-- --></div><div class="line6"><!-- --></div><div class="line5"><!-- --></div><div class="line4"><!-- --></div><div class="line3"><!-- --></div><div class="line2"><!-- --></div><div class="line1"><!-- --></div></div></div><input value="" class="validate[required] text-input" type="text" name="req" id="req">
+			</label>
+			<legend>
+				Placeholder &amp; required
+			</legend>
+			<label>
+				<span>Field is required : </span>
+				<div class="reqplaceholderformError parentFormformID formError" style="opacity: 0.87; position: absolute; top: 249px; left: 762.5px; margin-top: -33px;"><div class="formErrorContent">* This field is required<br></div><div class="formErrorArrow"><div class="line10"><!-- --></div><div class="line9"><!-- --></div><div class="line8"><!-- --></div><div class="line7"><!-- --></div><div class="line6"><!-- --></div><div class="line5"><!-- --></div><div class="line4"><!-- --></div><div class="line3"><!-- --></div><div class="line2"><!-- --></div><div class="line1"><!-- --></div></div></div><input value="This is a placeholder" data-validation-placeholder="This is a placeholder" class="validate[required] text-input" type="text" name="reqplaceholder" id="reqplaceholder">
+			</label>
+			<label>
+				<span>Favorite sport 1:</span>
+				<div class="sportformError parentFormformID formError" style="opacity: 0.87; position: absolute; top: 298px; left: 626.5px; margin-top: -33px;"><div class="formErrorContent">* This field is required<br></div><div class="formErrorArrow"><div class="line10"><!-- --></div><div class="line9"><!-- --></div><div class="line8"><!-- --></div><div class="line7"><!-- --></div><div class="line6"><!-- --></div><div class="line5"><!-- --></div><div class="line4"><!-- --></div><div class="line3"><!-- --></div><div class="line2"><!-- --></div><div class="line1"><!-- --></div></div></div><select name="sport" id="sport" class="validate[required]">
+					<option value="">Choose a sport</option>
+					<option value="option1">Tennis</option>
+					<option value="option2">Football</option>
+					<option value="option3">Golf</option>
+				</select>
+			</label>
+			<label>
+				<span>Favorite sport 2:</span>
+				<div class="sport2formError parentFormformID formError" style="opacity: 0.87; position: absolute; top: 336px; left: 622.5px; margin-top: -33px;"><div class="formErrorContent">* This field is required<br></div><div class="formErrorArrow"><div class="line10"><!-- --></div><div class="line9"><!-- --></div><div class="line8"><!-- --></div><div class="line7"><!-- --></div><div class="line6"><!-- --></div><div class="line5"><!-- --></div><div class="line4"><!-- --></div><div class="line3"><!-- --></div><div class="line2"><!-- --></div><div class="line1"><!-- --></div></div></div><select name="sport2" id="sport2" multiple="" class="validate[required]">
+					<option value="">Choose a sport</option>
+					<option value="option1">Tennis</option>
+					<option value="option2">Football</option>
+					<option value="option3">Golf</option>
+				</select>
+			</label>
+			<br>
+			validate[required]
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				Custom
+			</legend>
+			<label>
+				<p>Comes with many predifined regex (phone, url, ip, email..etc)</p>
+				<a href="http://www.position-relative.net/creation/formValidator/demos/demoRegExp.html">[DEMO]</a>
+				<br>
+				<span>Enter a URL : </span>
+				<div class="urlformError parentFormformID formError" style="opacity: 0.87; position: absolute; top: 584px; left: 762.5px; margin-top: -33px;"><div class="formErrorContent">* Invalid URL<br></div><div class="formErrorArrow"><div class="line10"><!-- --></div><div class="line9"><!-- --></div><div class="line8"><!-- --></div><div class="line7"><!-- --></div><div class="line6"><!-- --></div><div class="line5"><!-- --></div><div class="line4"><!-- --></div><div class="line3"><!-- --></div><div class="line2"><!-- --></div><div class="line1"><!-- --></div></div></div><input value="http://" class="validate[required,custom[url]] text-input" type="text" name="url" id="url">
+				<br>
+				validate[required,custom[url]]
+			</label>
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				Equals
+			</legend>
+			<label>
+				<span>Password : </span>
+				<input value="karnius" class="validate[required] text-input" type="password" name="password" id="password">
+			</label>
+			<label>
+				<span>Confirm password : </span>
+				<div class="password2formError parentFormformID formError" style="opacity: 0.87; position: absolute; top: 775px; left: 762.5px; margin-top: -33px;"><div class="formErrorContent">* Fields do not match<br></div><div class="formErrorArrow"><div class="line10"><!-- --></div><div class="line9"><!-- --></div><div class="line8"><!-- --></div><div class="line7"><!-- --></div><div class="line6"><!-- --></div><div class="line5"><!-- --></div><div class="line4"><!-- --></div><div class="line3"><!-- --></div><div class="line2"><!-- --></div><div class="line1"><!-- --></div></div></div><input value="kaniusBAD" class="validate[required,equals[password]] text-input" type="password" name="password2" id="password2">
+				<br>
+				validate[required,equals[password]]
+			</label>
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				Function
+			</legend>
+			<label>
+				<span>Write 'HELLO' : </span>
+				<input value="" class="validate[required,funcCall[checkHELLO]] text-input" type="text" id="lastname" name="lastname">
+				<br>
+				validate[required,funcCall[checkHELLO]]
+			</label>
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				Conditional required
+			</legend>
+			<label>
+				<span>Depending field (1): </span>
+				<input value="" class="text-input" type="text" name="dep1" id="dep1">
+			</label>
+			<label>
+				<span>This field is required if above field has a value : </span>
+				<input class="validate[condRequired[dep1]] text-input" type="text" name="conditionalrequired1" id="conditionalrequired1">
+                                <br>
+				validate[condRequired[dep1]]
+			</label>
+                        
+			<label>
+                                <br>
+                                <strong>OR with 2 depending fields</strong><br>
+                                <br>
+				<span>Depending field (2a) : </span>
+				<input value="" class="text-input" type="text" name="dep2a" id="dep2a">
+			</label>
+			<label>
+				<span>Depending field (2b) : </span>
+				<input value="" class="text-input" type="text" name="dep2b" id="dep2b">
+			</label>
+			<label>
+				<span>This field is required if any of above fields has a value : </span>
+				<input class="validate[condRequired[dep2a,dep2b]] text-input" type="text" name="conditionalrequired2" id="conditionalrequired2">
+                                <br>
+				validate[condRequired[dep2a,dep2b]]
+			</label>
+                    
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				MinSize
+			</legend>
+			<label>
+				Minimum field size
+				<br>
+				<input value="" class="validate[required,minSize[6]] text-input" type="text" name="minsize" id="minsize">
+				<br>
+				validate[required,minSize[6]]
+			</label>
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				MaxSize
+			</legend>
+			<label>
+				Maximum field size, optional
+				<br>
+				<input value="0123456789" class="validate[optional,maxSize[6]] text-input" type="text" name="maxsize" id="maxsize">
+				<br>
+				validate[maxSize[6]]<br>
+				note that the field is optional - it won't fail if it has no value
+			</label>
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				Min
+			</legend>
+			<label>
+				integer &gt;= -5
+				<br>
+				<input value="-7" class="validate[required,custom[integer],min[-5]] text-input" type="text" name="min" id="min">
+				<br>
+				validate[required,custom[integer],min[-5]]
+			</label>
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				Max
+			</legend>
+			<label>
+				integer ,50]
+				<br>
+				<input value="55" class="validate[required,custom[integer],max[50]] text-input" type="text" name="max" id="max">
+				<br>
+				validate[required,custom[integer],max[50]]
+			</label>
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				Past
+			</legend>
+			<label>
+				Checks that the value is a date in the past
+				<br>
+				<span>Please enter a date ealier than 2010/01/01</span>
+				<input value="2009/06/30" class="validate[custom[date],past[2010/01/01]] text-input" type="text" name="past" id="past">
+				<br>
+				validate[custom[date],past[2010/01/01]]
+			</label>
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				Future
+			</legend>
+			<label>
+				Checks that the value is a date in the future
+				<br>
+				<span>Please enter a date older than today's date</span>
+				<input value="2011-01-" class="validate[custom[date],future[NOW]] text-input" type="text" name="future" id="future">
+				<br>
+				validate[custom[date],future[NOW]]<br><br>
+		</label></fieldset>
+			
+		<fieldset>
+			<legend>
+				Group required
+			</legend>
+			<label>
+				Checks if at least one of the input is not empty.
+				<br>
+				<br>
+				<span>Please enter a credit card</span>
+			</label>
+			<input value="" class="validate[groupRequired[payments]] text-input" type="text" name="creditcard1" id="creditcard1">
+			<label><strong>OR</strong></label><br>
+			<label>Please enter a paypal acccount</label>
+			<input value="" class="validate[groupRequired[payments],custom[email]] text-input" type="text" name="paypal" id="paypal">
+			<label><strong>OR</strong></label><br>
+			<label>Please enter a bank account</label>
+			<input value="" class="validate[groupRequired[payments],custom[integer]] text-input" type="text" name="bank" id="bank">
+			<label><strong>OR</strong></label><br>
+			<label>Please  choose from select</label>
+			<select class="validate[groupRequired[payments]] text-input" type="text" name="bank2" id="bank2">
+				<option value="">Choose a payment option</option>
+				<option value="Paypal">Paypal</option>
+				<option value="Bank">Bank account</option>
+			</select>
+		</fieldset>
+			
+		<fieldset>
+			<legend>
+				Date Range<br>
+			</legend>
+			<label>
+				Checks that the start date is before the end date.
+				Please enter an end date ealier than the start date<br><br>
+				<label for="date1">Start Date : </label>
+				<input value="9/1/2009" class="validate[dateRange[grp1]]" type="text" id="date1">
+			</label>
+			<label>
+				<label for="date2">End Date : </label>
+				<input value="3/18/1985" class="validate[dateRange[grp1]]" type="text" id="date2">
+				<br>
+				validate[dateRange[grp1]]<br>
+				Note* Both fields must have the same name
+			</label>
+		</fieldset>
+		<fieldset>
+			<label>
+				<span>Field is required with function : </span>
+				<input value="" class="validate[required, custom[requiredInFunction]] text-input" type="text" name="req3" id="req3">
+			</label>
+		</fieldset>
+		<fieldset>
+			<legend>
+				Date Time Range<br>
+			</legend>
+			<label>
+				Checks that the start date and time are before the end date and time.
+				Please enter an end date ealier than the start date<br><br>
+				<label for="date1">Start Date Time: </label>
+				<input value="9/1/2009 9:30:00 PM" class="validate[dateTimeRange[grp2]]" type="text" id="datetime1">
+			</label>
+			<label>
+				<label for="date2">End Date Time: </label>
+				<input value="9/1/2009 2:30:00 AM" class="validate[dateTimeRange[grp2]]" type="text" id="datetime2">
+				<br>
+				validate[dateTimeRange[grp2]<br>
+				Note* Both fields must have the same name
+			</label>
+		</fieldset>
+		
+		<fieldset>
+			<script>
+		/**
+		* 
+		* @param {input[type=checkbox]} the checkbox to read
+		* @param {input[type=textbox]} the field bound to the checkbox that gets enabled or disabled
+		*/
+		    function ToggleState(checkbox, field) {
+					if ($(checkbox).attr('checked'))
+						$(field).attr('disabled', 'disabled');
+					else
+						$(field).removeAttr('disabled');
+		    }
+			</script>
+			<legend>
+				Date compare<br>
+			</legend>
+
+				Checks that the first date is before the second date.
+				Please enter the second date ealier than the first date<br><br>
+				<label>First Date :<br>
+					<input class="checkbox" type="checkbox" name="name1" id="name1" onclick="javascript:ToggleState(&#39;#name1&#39;, &#39;#dateCmp1&#39;);">
+					<i>Disable first date field</i><br>
+				</label>
+				<input value="2011/3/4" class="validate[custom[date],past[#dateCmp2]]" type="text" name="dateCmp1" id="dateCmp1">
+				<br>
+				validate[custom[date],past[#dateCmp2]]<br><br>
+				<label>Second Date :<br>
+					<input class="checkbox" type="checkbox" name="name2" id="name2" onclick="javascript:ToggleState(&#39;#name2&#39;, &#39;#dateCmp2&#39;);">
+					<i>Disable second date field</i><br>
+				</label>
+				<input value="2010/1/2" class="validate[custom[date],future[#dateCmp1]]" type="text" name="dateCmp2" id="dateCmp2">
+				<br>
+				validate[custom[date],future[#dateCmp1]]<br>
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				Credit Card
+			</legend>
+			<label>
+				Checks that the credit card number is at least theoretically valid, according the to the
+				<a href="http://en.wikipedia.org/wiki/Luhn_algorithm">Luhn checksum algorithm</a>, but not
+				whether the specific card number is active with a bank, etc.
+
+				<br>
+				<br>
+				Since credit cards are often presented in different formats, spaces and
+				hyphens (' ','-') are simply ignored.
+
+				<br>
+				<br>
+				Examples:<br>
+				<ul>
+					<li>4111 1111 1111 1111</li>
+					<li>3737-321345-610004</li>
+				</ul>
+				<a href="http://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm">More examples</a>
+				<br>
+				<input value="" class="validate[required,creditCard] text-input" type="text" name="creditcard2" id="creditcard2">
+				<br>
+				validate[required,creditCard]
+			</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				Checkbox
+			</legend>
+			<label>
+				Check this <a href="http://www.position-relative.net/creation/formValidator/demos/demoCheckBox.html">[DEMO]</a>
+			</label>
+		</fieldset>
+		<fieldset>
+			<legend>
+				Ajax
+			</legend>
+			<label>
+				Check this <a href="http://www.position-relative.net/creation/formValidator/demos/demoAjaxSubmitPHP.html">[DEMO]</a>
+			</label>
+		</fieldset>
+		<input class="submit" type="submit" value="Validate &amp; Send the form!"><hr>
+	</form>
+
+
+<div class="cmcMultiHighlighterOverlay" id="cmcMultiHighlighterOverlay1" style="z-index: 1000000"><div class="cmcMultiHighlighterContentWrapper" id="cmcMultiHighlighterContentWrapper1"><div class="cmcMultiHighlighterOverlayContentWrapper cmcMultiHighlighterOverlayContentWrapperLeft" id="cmcMultiHighlighterOverlayContentWrapper1"><span class="cmcMultiHighlighterSearchInputBoxWrapper" id="cmcMultiHighlighterSearchInputBoxWrapper1"><input type="text" class="cmcMultiHighlighterBoxBase cmcMultiHighlighterSearchInputBox" id="cmcMultiHighlighterSearchInputBox1" data-prevval=""></span></div><div class="cmcMultiHighlighterOverlayContentWrapper cmcMultiHighlighterOverlayContentWrapperRight" id="cmcMultiHighlighterOverlayContentWrapper2"><span class="cmcMultiHighlighterBoxBase cmcMultiHighlighterSearchCounts" id="cmcMultiHighlighterSearchCounts1"></span></div><div class="cmcMultiHighlighterOverlayContentWrapper cmcMultiHighlighterOverlayContentWrapperRight" id="cmcMultiHighlighterOverlayContentWrapper3" style="white-space: nowrap;"><span class="cmcmh cmcMultiHighlighterOverlayButtonContainer ui-buttonset" id="cmcMultiHighlighterOverlayButtonContainer1"><input type="checkbox" class="cmcmh ui-helper-hidden-accessible" id="button1RedactText" disabled=""><label class="cmcmh ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left ui-corner-right ui-button-disabled ui-state-disabled" for="button1RedactText" role="button" aria-disabled="true"><span class="ui-button-text">R</span></label></span></div><div class="cmcMultiHighlighterOverlayContentWrapper closeWrapper"><a class="cmcMultiHighlighterOverlayClose"></a></div></div></div></body></html>
